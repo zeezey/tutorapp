@@ -1,0 +1,27 @@
+<!--
+<body>
+<div class="main-sub">Select a subject:</div>
+<a href data-ng-click="find()">Math</a>
+<a href="subjects.html">Chemistry</a>
+<a href="subjects.html">Physics</a>
+<a href="subjects.html">History</a>
+<a href="subjects.html">Economics</a>
+</body>
+-->
+
+<div class="list-group">
+  <li class="list-group-item">
+    Select a Subject
+      <a href="javascript:void();" ng-click="filter: {subject: 'Math'}">Math</a>
+  <a href="#" class="list-group-item" ng-repeat="tutor in tutors | filter: {subject: 'Math'}">Math: {{tutor.fname}}, {{tutor.lname}}</a>
+  <a href="#" class="list-group-item">Chemistry</a>
+  <a href="#" class="list-group-item">Physics</a>
+  <a href="#" class="list-group-item">History</a>
+
+{{tutors[0].fname}}
+{{tutors[0].subject}}
+
+
+
+<div ng-repeat="tutor in tutors | filter: {subject: 'English'}">{{tutor}}</div>
+<!--  var link = document.querySelectorAll("#mycoollinkthathasitsownID").on("click", function() { var newTutors = $http.get(URL).filter(function(t){ return t.subject=="newSubject";});});-->

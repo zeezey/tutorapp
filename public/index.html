@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="eng" ng-app="tutors">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+<!-- Optional theme -->
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">-->
+<!-- Latest compiled and minified JavaScript -->
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
+
+</head>
+<base href="/">
+<body>
+   <div class="navbar navbar-default navbar-static-top"
+     role="navigation" bs-navbar>
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/">
+      <span class="glyphicon glyphicon-pencil"></span>
+      Tutor<strong>Database</strong></a>
+  </div>
+  <ul class="nav navbar-nav">
+    <li data-match-route="/$"><a href="/">Home</a></li>
+    <li data-match-route="/subjects"><a href="/subjects">Subjects</a></li>
+    <li data-match-route="/tutors"><a href="/tutors">Tutors</a></li>
+    <li data-match-route="/search"><a href="/search" input type="text" placeholder="Search..."></a></li>
+  </ul>
+  <ul class="nav navbar-nav pull-right" ng-if="!currentUser">
+    <li data-match-route="/login"><a href="/login">Login</a></li>
+    <li data-match-route="/signup"><a href="/signup">Sign up</a></li>
+  </ul>
+  <ul class="nav navbar-nav pull-right" ng-if="currentUser">
+    <li class="navbar-text" ng-bind="currentUser.email"></li>
+    <li><a href="javascript:void(0)" ng-click="logout()">Logout</a></li>
+  </ul>
+</div>
+
+
+
+<ng-view></ng-view>
+
+
+
+<!--    <div back-img="IMG/notes-on-wood.jpg">Hello there</div>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
+    <script src="//code.angularjs.org/1.4.7/angular-route.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.min.js"></script>
+
+    <script src="app/app.js"></script>
+    <script src="app/angular-strap.min.js"></script>
+    <script src="app/angular-strap.tpl.min.js"></script>
+    <script src="app/tutorService.js"></script>
+    <script src="app/loginctrl.js"></script>
+    <script src="app/homectrl.js"></script>
+    <script src="app/subjCtrl.js"></script>
+    <script src="app/tutorctrl.js"></script>
+
+</body>
+</html>
