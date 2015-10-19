@@ -32,7 +32,19 @@ app.config(['$routeProvider', function($routeProvider) {
             }).
             when('/tutorProfile', {
                  templateUrl: 'app/views/tutorProfile.html',
-                 controller: 'tutorProfilectrl'
+                 controller: 'subjCtrl'
+            }).
+            when('/subjects/Math', {
+                 templateUrl: 'app/views/mathSub.html',
+                 controller: 'subjCtrl'
+            }).
+            when('/subjects/Chem', {
+                 templateUrl: 'app/views/chemSub.html',
+                 controller: 'subjCtrl'
+            }).
+            when('/subjects/Physics', {
+                 templateUrl: 'app/views/pyscSub.html',
+                 controller: 'subjCtrl'
             })
             .otherwise('/home')
 }]);

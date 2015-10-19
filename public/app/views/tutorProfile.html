@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Tutor Profile</title>
+	<title>{{tutors.fname}} {{tutors.lname}}</title>
 	<link rel="stylesheet" type="text/css" href="./stylesheets/global.css" />
 </head>
 
@@ -15,19 +15,15 @@
 				</div>
 
 				<div class="data">
-					<h1>Johnny Appleseed</h1>
-					<h3>San Francisco, CA</h3>
-					<h4><a href="http://spyrestudios.com/">http://spyrestudios.com/</a></h4>
-					<div class="socialMediaLinks">
-						<a href="http://twitter.com/jakerocheleau" rel="me" target="_blank"><img src="img/twitter.png" alt="@jakerocheleau" /></a>
+					<h1>{{tutors.location}}</h1>
+					<h3>{{tutors.location}}</h3>
 						<a href="http://gowalla.com/users/JakeRocheleau" rel="me" target="_blank"><img src="img/gowalla.png" /></a>
 					</div>
 					<div class="sep"></div>
 				</div>
-			</div>
 
 			<h1>About Me:</h1>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p>{{tutors.about}}</p>
 		</section>
 
 		<section id="right">

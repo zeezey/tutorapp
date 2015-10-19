@@ -11,17 +11,13 @@
 
 <div class="list-group">
   <li class="list-group-item">
-    Select a Subject
-      <a href="javascript:void();" ng-click="filter: {subject: 'Math'}">Math</a>
-  <a href="#" class="list-group-item" ng-repeat="tutor in tutors | filter: {subject: 'Math'}">Math: {{tutor.fname}}, {{tutor.lname}}</a>
-  <a href="#" class="list-group-item">Chemistry</a>
-  <a href="#" class="list-group-item">Physics</a>
-  <a href="#" class="list-group-item">History</a>
-
-{{tutors[0].fname}}
-{{tutors[0].subject}}
+    <h2>Select a Subject</h2>
+  <a href="/subjects/Math" class="list-group-item">Math</a>
+  <a href="/subjects/Chem" class="list-group-item">Chemistry</a>
+  <a href="/subjects/Physics" class="list-group-item">Physics</a>
+    </li>
+</div>
 
 
-
-<div ng-repeat="tutor in tutors | filter: {subject: 'English'}">{{tutor}}</div>
+<!--<div ng-repeat="tutor in tutors | filter: {subject: 'English'}">{{tutor}}</div>-->
 <!--  var link = document.querySelectorAll("#mycoollinkthathasitsownID").on("click", function() { var newTutors = $http.get(URL).filter(function(t){ return t.subject=="newSubject";});});-->
