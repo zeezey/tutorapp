@@ -2,6 +2,9 @@ var app = angular.module('tutors');
 //app.controller('tutorctrl', function($scope, tutors){
 //    console.log(tutors)
 //});
+app.controller('tutorctrl', function($scope, $http, $routeParams, $location, tutorFactory, tutors){
+$scope.tutors = tutors.data;
+});
 
 //$http({method: 'GET', url: '/api/tutors'}).
 //  success(function(data, status, headers, config) {
@@ -129,29 +132,29 @@ var app = angular.module('tutors');
 
 
 
-function AddTutorCtrl($scope, $http, $location) {
-  $scope.form = {};
-  $scope.addTutor = function () {
-    $http.post('/api/tutors', $scope.tutor).
-      success(function(data) {
-        $location.path('/');
-      });
-  };
-}
-
-function ReadTutorCtrl($scope, $http, $routeParams) {
-  $http.get('/api/tutors/' + $routeParams.id).
-    success(function(data) {
-      $scope.post = data.post;
-    });
-}
-
-function EditTutorCtrl($scope, $http, $location, $routeParams) {
-  $scope.form = {};
-  $http.get('/api/tutors/' + $routeParams.id).
-    success(function(data) {
-      $scope.form = data.post;
-    });
+//function AddTutorCtrl($scope, $http, $location) {
+//  $scope.form = {};
+//  $scope.addTutor = function () {
+//    $http.post('/api/tutors', $scope.tutor).
+//      success(function(data) {
+//        $location.path('/');
+//      });
+//  };
+//}
+//
+//function ReadTutorCtrl($scope, $http, $routeParams) {
+//  $http.get('/api/tutors/' + $routeParams.id).
+//    success(function(data) {
+//      $scope.post = data.post;
+//    });
+//}
+//
+//function EditTutorCtrl($scope, $http, $location, $routeParams) {
+//  $scope.form = {};
+//  $http.get('/api/tutors/' + $routeParams.id).
+//    success(function(data) {
+//      $scope.form = data.post;
+//    });
 
 //  $scope.editPost = function () {
 //    $http.put('/api/tutors/' + $routeParams.id, $scope.form).
@@ -159,22 +162,17 @@ function EditTutorCtrl($scope, $http, $location, $routeParams) {
 //        $location.url('/readPost/' + $routeParams.id);
 //      });
 //  };
-}
 
-function DeleteTutorCtrl($scope, $http, $location, $routeParams) {
-  $http.get('/api/tutors/' + $routeParams.id).
-    success(function(data) {
-      $scope.post = data.post;
-    });
 
-  $scope.deleteTutor = function () {
-    $http.delete('/api/tutors/' + $routeParams.id).
-      success(function(data) {
-        $location.url('/');
-      });
-  };
+//function DeleteTutorCtrl($scope, $http, $location, $routeParams) {
+//  $http.get('/api/tutors/' + $routeParams.id).
+//    success(function(data) {
+//      $scope.post = data.post;
+//    });
 
-  $scope.home = function () {
-    $location.url('/');
-  };
-}
+
+
+//  $scope.home = function () {
+//    $location.url('/');
+//  };
+//}

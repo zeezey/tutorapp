@@ -1,34 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<title>{{tutors.fname}} {{tutors.lname}}</title>
-	<link rel="stylesheet" type="text/css" href="./stylesheets/global.css" />
-</head>
-
-<body>
-	<div id="content" class="clearfix">
-		<section id="left">
-			<div id="userStats" class="clearfix">
-				<div class="pic">
-					<a href="#"><img src="img/user_avatar.jpg" width="150" height="150" /></a>
-				</div>
-
-				<div class="data">
-					<h1>{{tutors.location}}</h1>
-					<h3>{{tutors.location}}</h3>
-						<a href="http://gowalla.com/users/JakeRocheleau" rel="me" target="_blank"><img src="img/gowalla.png" /></a>
-					</div>
-					<div class="sep"></div>
-				</div>
-
-			<h1>About Me:</h1>
-			<p>{{tutors.about}}</p>
-		</section>
-
-		<section id="right">
-			<div class="gcontent">
-		</section>
-	</div>
-</body>
-</html>
+<br>
+<div class="container" ng-repeat="tutor in tutors">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-12 lead">Tutor profile<hr></div>
+          </div>
+          <div class="row">
+			<div class="col-md-4 text-center">
+              <img class="img-circle avatar avatar-original" style="-webkit-user-select:none;
+              display:block; margin:auto;" src="http://robohash.org/sitsequiquia.png?size=120x120">
+            </div>
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md-12">
+                  <h1 class="only-bottom-margin">{{tutor.fname}}, {{tutor.lname}}</h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <span class="text-muted">Email: </span>{{tutor.email}}<br>
+                  <span class="text-muted">City: </span><small class="text-muted">{{tutor.location}}</small>
+                  <small class="text-muted">Created: 01.01.2015</small>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <hr><button class="btn btn-default pull-right"><i class="glyphicon glyphicon-pencil"></i> Edit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

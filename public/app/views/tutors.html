@@ -1,0 +1,25 @@
+<h2><div class="panel-heading">List of all Tutors</div></h2>
+
+  <!-- Table -->
+  <table class="table">
+  <thead><tr>
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Tutor Rating</th>
+  <th>Location</th>
+  <th>Email</th>
+  <th>Subject</th>
+  <th>Delete?</th>
+  </tr></thead>
+   <tbody>
+   <tr data-ng-repeat="tutor in tutors">
+   <td><a href="/tutorProfile/{{tutor._id}}">{{tutor.fname}}</a></td>
+      <td>{{tutor.lname}}</td>
+      <td>{{tutor.rating}}</td>
+      <td>{{tutor.location}}</td>
+      <td>{{tutor.email}}</td>
+      <td>{{tutor.subject}}</td>
+      <td><button ng-click="removeTutor()" class="btn-danger">click here to delete</button></td>
+       </tr>
+      </tbody>
+        </table>

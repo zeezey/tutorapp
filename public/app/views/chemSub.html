@@ -12,7 +12,7 @@
   </tr></thead>
    <tbody>
    <tr data-ng-repeat="tutor in tutors | filter: {subject: 'Chemistry'}">
-   <td>{{tutor.fname}}</td>
+       <td><a href="/tutorProfile/{{tutor._id}}">{{tutor.fname}}</a></td>
       <td>{{tutor.lname}}</td>
       <td>{{tutor.rating}}</td>
       <td>{{tutor.location}}</td>
@@ -20,9 +20,5 @@
       <td>{{tutor.subject}}</td>
        </tr>
       </tbody>
-<!--
-    <li ng-repeat="x in gData">
 
-</li>
--->
   </table>

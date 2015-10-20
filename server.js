@@ -13,7 +13,7 @@ var bodyParser  = require('body-parser'),
     bcrypt = require('bcryptjs');
 //tutors = require('./routes/Tutor');
 
-app.use( express.static('./public') );
+app.use( express.static(__dirname + '/public') );
 app.use( bodyParser.json() );
 app.use( cors() );
 app.use(helmet());
@@ -25,13 +25,15 @@ app.post('/user', UserCtrl.register);
 app.get('/user', UserCtrl.me);
 
 app.post('/api/tutors', TutorCtrl.createTutor);
+app.post('/api/tutors', TutorCtrl.addTutor);
 //app.del('/api/tutors/:id', TutorCtrl.removeTutor);
-app.get('/api/tutors', TutorCtrl.findAll);
+app.get('/api/tutors', TutorCtrl.findAllTutors);
 app.get('/api/tutors/:id', TutorCtrl.findTutor);
 
 app.get('/api/students', StudentCtrl.createStudent);
 app.get('/api/students', StudentCtrl.findStudent);
-
+app.delete('/api/tutors/:id', TutorCtrl.removeTutor);
+app.put('/api/tutors/:id', TutorCtrl.updateTutor);
 
  //Configuring Passport
 var passport = require('passport');

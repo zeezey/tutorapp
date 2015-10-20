@@ -1,6 +1,6 @@
 <h2><div class="panel-heading">Math Tutors</div></h2>
 
-  <!-- Table -->
+   Table
   <table class="table">
   <thead><tr>
   <th>First Name</th>
@@ -9,21 +9,19 @@
   <th>Location</th>
   <th>Email</th>
   <th>Subject</th>
+  <th>Delete?</th>
   </tr></thead>
    <tbody>
    <tr data-ng-repeat="tutor in tutors | filter: {subject: 'Math'}">
-   <td><a href="/tutorProfile">{{tutor.fname}}</a></td>
+   <td><a href="/tutorProfile/{{tutor._id}}">{{tutor.fname}}</a></td>
       <td>{{tutor.lname}}</td>
       <td>{{tutor.rating}}</td>
       <td>{{tutor.location}}</td>
       <td>{{tutor.email}}</td>
       <td>{{tutor.subject}}</td>
+      <td><button ng-click="removeTutor()" class="btn-danger">click here to delete</button></td>
        </tr>
       </tbody>
-<!--
-    <li ng-repeat="x in gData">
+        </table>
 
-</li>
--->
-  </table>
 

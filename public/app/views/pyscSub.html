@@ -12,7 +12,7 @@
   </tr></thead>
    <tbody>
    <tr data-ng-repeat="tutor in tutors | filter: {subject: 'Physics'}">
-   <td>{{tutor.fname}}</td>
+       <td><a href="/tutorProfile/{{tutor._id}}">{{tutor.fname}}</a></td>
       <td>{{tutor.lname}}</td>
       <td>{{tutor.rating}}</td>
       <td>{{tutor.location}}</td>

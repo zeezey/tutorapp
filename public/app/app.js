@@ -13,10 +13,20 @@ app.config(['$routeProvider', function($routeProvider) {
             when('/tutors', {
                  templateUrl: 'app/views/tutors.html',
                 controller: 'tutorctrl',
+                resolve: {
+                     tutors: function(tutorFactory) {
+                         return tutorFactory.getTutors();
+                     }
+                 }
             }).
             when('/subjects', {
                  templateUrl: 'app/views/subjects.html',
-                 controller: 'subjCtrl'
+                 controller: 'subjCtrl',
+                 resolve: {
+                     tutors: function(tutorFactory) {
+                         return tutorFactory.getTutors();
+                     }
+                 }
             }).
             when('/login', {
                  templateUrl: 'app/views/login.html',
@@ -30,23 +40,45 @@ app.config(['$routeProvider', function($routeProvider) {
                  templateUrl: 'app/views/signup.html',
                  controller: 'loginctrl'
             }).
-            when('/tutorProfile', {
+            when('/tutorProfile/:id', {
                  templateUrl: 'app/views/tutorProfile.html',
-                 controller: 'subjCtrl'
+                 controller: 'tutorProfileCtrl',
+                 resolve: {
+                     tutor: function(tutorFactory, $route) {
+                         return tutorFactory.getTutor($route.current.params).then(function(resp){
+                             return resp.data;
+                         });
+                     }
+                 }
             }).
             when('/subjects/Math', {
                  templateUrl: 'app/views/mathSub.html',
-                 controller: 'subjCtrl'
+                 controller: 'subjCtrl',
+                 resolve: {
+                     tutors: function(tutorFactory) {
+                         return tutorFactory.getTutors();
+                     }
+                 }
             }).
             when('/subjects/Chem', {
                  templateUrl: 'app/views/chemSub.html',
-                 controller: 'subjCtrl'
+                 controller: 'subjCtrl',
+                 resolve: {
+                     tutors: function(tutorFactory) {
+                         return tutorFactory.getTutors();
+                     }
+                 }
             }).
             when('/subjects/Physics', {
                  templateUrl: 'app/views/pyscSub.html',
-                 controller: 'subjCtrl'
+                 controller: 'subjCtrl',
+                 resolve: {
+                     tutors: function(tutorFactory) {
+                         return tutorFactory.getTutors();
+                     }
+                 }
             })
-            .otherwise('/home')
+            .otherwise('/home');
 }]);
 
 

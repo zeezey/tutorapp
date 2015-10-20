@@ -1,5 +1,8 @@
 /////move this  to models folder, name file TutorModel.js///////////
 var mongoose = require('mongoose');
+//module.exports =
+//  TutorSchema: TutorSchema
+//  Model: TutorModel
 
 var Tutorschema = new mongoose.Schema({
   fname: {type: String, required: true},
@@ -7,9 +10,10 @@ var Tutorschema = new mongoose.Schema({
   email: {type: String, required: true},
   location: {type: String, required: true},
   rating: {type: Number, required: true, min: 0},
-    subject: {type: String}
+  subject: {type: String}
 });
 module.exports = mongoose.model('Tutor', Tutorschema);
+//var TutorModel = mongoose.model('Tutor', Tutorschema);
 
 //check if user is logged in and if already in db
 //exports.login = function(req, res, next) {
