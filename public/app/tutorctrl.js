@@ -2,7 +2,7 @@ var app = angular.module('tutors');
 //app.controller('tutorctrl', function($scope, tutors){
 //    console.log(tutors)
 //});
-app.controller('tutorctrl', function($scope, $http, $routeParams, $location, tutorFactory, tutors){
+app.controller('tutorctrl', function($scope, $http, $routeParams, tutorFactory, tutors){
 $scope.tutors = tutors.data;
 });
 

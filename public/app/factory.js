@@ -3,7 +3,8 @@ var app = angular.module('tutors')
 app.
   factory('tutorFactory', function($http){
     return {
-      addTutor: function(tutor) {
+      createTutor: function(tutor) {
+          tutor.rating = 5;
         return $http.post('/api/tutors/', tutor);
       },
       getTutors: function() {
@@ -21,6 +22,4 @@ app.
     };
   });
 
-//.then(function(response){ //wrap it inside another promise using then
-////    return response.data.getTutor; //only return friends
-////                        });
+

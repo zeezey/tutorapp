@@ -12,12 +12,12 @@ app.controller('subjCtrl', function($scope, $http, $routeParams, $location, tuto
 //});
 
 //    $scope.getTutor = function(id) {
-//        tutorFactory.getTutor(id).then(function(data, status, headers, config) {
+//        tutorFactory.getTutor(id).then(function(data) {
 //            $scope.tutor = data;
 //        });
 //    };
         $scope.removeTutor = function (id) {
-            tutorFactory.deleteTutor(id).then(function(data, status, headers, config){
+            tutorFactory.deleteTutor(id).then(function(data){
             $scope.deleteTutor = data;
       });
   };

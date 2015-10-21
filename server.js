@@ -25,7 +25,7 @@ app.post('/user', UserCtrl.register);
 app.get('/user', UserCtrl.me);
 
 app.post('/api/tutors', TutorCtrl.createTutor);
-app.post('/api/tutors', TutorCtrl.addTutor);
+//app.post('/api/tutors', TutorCtrl.addTutor);
 //app.del('/api/tutors/:id', TutorCtrl.removeTutor);
 app.get('/api/tutors', TutorCtrl.findAllTutors);
 app.get('/api/tutors/:id', TutorCtrl.findTutor);

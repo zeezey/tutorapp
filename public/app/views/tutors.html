@@ -12,7 +12,7 @@
   <th>Delete?</th>
   </tr></thead>
    <tbody>
-   <tr data-ng-repeat="tutor in tutors">
+   <tr data-ng-repeat="tutor in tutors | filter:tutor"><input type="text" placeholder="Search By Subject..." ng-model="tutor.subject">
    <td><a href="/tutorProfile/{{tutor._id}}">{{tutor.fname}}</a></td>
       <td>{{tutor.lname}}</td>
       <td>{{tutor.rating}}</td>

@@ -39,28 +39,29 @@ module.exports = {
         });
         },
 
-    addTutor: function (req, res) {
-    var Tutor;
-    Tutor = new Tutor({
-        fname: req.body.fname,
-        lname: req.body.lname,
-        email: req.body.email,
-        location: req.body.location,
-        subject: req.body.subject
-    });
-    Tutor.save(function (err) {
-        if (!err) {
-            console.log("created");
-        } else {
-            console.log(err);
-        }
-    });
-
-    return res.send(Tutor);
-},
+//    addTutor: function (req, res) {
+//    var Tutor;
+//    Tutor = new Tutor({
+//        fname: req.body.fname,
+//        lname: req.body.lname,
+//        email: req.body.email,
+//        location: req.body.location,
+//        subject: req.body.subject
+//    });
+//    Tutor.save(function (err) {
+//        if (!err) {
+//            console.log("created");
+//        } else {
+//            console.log(err);
+//        }
+//    });
+//
+//    return res.send(Tutor);
+//},
     createTutor: function(req, res) {
     Tutor.create(req.body, function(err, result) {
           if(err) {
+              console.log(err)
             return res.status(500).json(err);
           }else {
             return res.status(200).json(result);

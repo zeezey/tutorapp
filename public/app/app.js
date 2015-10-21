@@ -38,7 +38,7 @@ app.config(['$routeProvider', function($routeProvider) {
             }).
             when('/signup', {
                  templateUrl: 'app/views/signup.html',
-                 controller: 'loginctrl'
+                 controller: 'signupCtrl'
             }).
             when('/tutorProfile/:id', {
                  templateUrl: 'app/views/tutorProfile.html',
