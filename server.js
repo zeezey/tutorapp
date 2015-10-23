@@ -35,6 +35,13 @@ app.get('/api/students', StudentCtrl.findStudent);
 app.delete('/api/tutors/:id', TutorCtrl.removeTutor);
 app.put('/api/tutors/:id', TutorCtrl.updateTutor);
 
+//Policies
+var isAuthed = function (req, res, next) {
+   if(!req.isAuthenticated()) {
+       return res.sendStatus(401);
+   }
+   return next();
+};
  //Configuring Passport
 var passport = require('passport');
 var expressSession = require('express-session');

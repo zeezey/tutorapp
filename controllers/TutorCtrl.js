@@ -58,10 +58,11 @@ module.exports = {
 //
 //    return res.send(Tutor);
 //},
+
     createTutor: function(req, res) {
     Tutor.create(req.body, function(err, result) {
           if(err) {
-              console.log(err)
+              console.log(err);
             return res.status(500).json(err);
           }else {
             return res.status(200).json(result);
@@ -69,4 +70,5 @@ module.exports = {
         });
 }
 };
+
 
